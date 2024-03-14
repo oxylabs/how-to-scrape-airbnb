@@ -1,0 +1,260 @@
+{
+    "source": "universal",
+    "url": null,
+    "geo_location": "United States",
+    "user_agent_type": "desktop",
+    "render": "html",
+    "browser_instructons": [
+        {
+            "type": "wait_for_element",
+            "selector": {
+                "type": "xpath",
+                "value": "//div[@data-section-id='HOST_PROFILE_DEFAULT']"
+            },
+            "timeout_s": 30
+        }
+    ],
+    "parse": true,
+    "parsing_instructions": {
+        "titles": {
+            "title_one": {
+                "_fns": [
+                    {
+                        "_fn": "xpath_one",
+                        "_args": [
+                            "//span/h1/text()"
+                        ]
+                    }
+                ]
+            },
+            "title_two": {
+                "_fns": [
+                    {
+                        "_fn": "xpath_one",
+                        "_args": [
+                            "//div/h1/text()"
+                        ]
+                    }
+                ]
+            }
+        },
+        "pricing": {
+            "price_per_night": {
+                "_fns": [
+                    {
+                        "_fn": "xpath_one",
+                        "_args": [
+                            "//span[@class='_tyxjp1']/text()",
+                            "//span[@class='_1y74zjx']"
+                        ]
+                    },
+                    {
+                        "_fn": "element_text"
+                    }
+                ]
+            },
+            "total_before_taxes": {
+                "_fns": [
+                    {
+                        "_fn": "xpath_one",
+                        "_args": [
+                            "//span/span[@class='_j1kt73']/text()"
+                        ]
+                    }
+                ]
+            }
+        },
+        "details": {
+            "specifications": {
+                "guests": {
+                    "_fns": [
+                        {
+                            "_fn": "xpath_one",
+                            "_args": [
+                                "//div[@data-section-id='OVERVIEW_DEFAULT_V2']//ol/li[1]/text()"
+                            ]
+                        },
+                        {
+                            "_fn": "amount_from_string"
+                        }
+                    ]
+                },
+                "bedrooms": {
+                    "_fns": [
+                        {
+                            "_fn": "xpath_one",
+                            "_args": [
+                                "//div[@data-section-id='OVERVIEW_DEFAULT_V2']//ol/li[2]/text()"
+                            ]
+                        }
+                    ]
+                },
+                "beds": {
+                    "_fns": [
+                        {
+                            "_fn": "xpath_one",
+                            "_args": [
+                                "//div[@data-section-id='OVERVIEW_DEFAULT_V2']//ol/li[3]/text()"
+                            ]
+                        },
+                        {
+                            "_fn": "amount_from_string"
+                        }
+                    ]
+                },
+                "baths": {
+                    "_fns": [
+                        {
+                            "_fn": "xpath_one",
+                            "_args": [
+                                "//div[@data-section-id='OVERVIEW_DEFAULT_V2']//ol/li[4]/text()"
+                            ]
+                        },
+                        {
+                            "_fn": "amount_from_string"
+                        }
+                    ]
+                }
+            },
+            "description": {
+                "_fns": [
+                    {
+                        "_fn": "xpath",
+                        "_args": [
+                            "//div[@data-section-id='DESCRIPTION_DEFAULT']//span/span/descendant-or-self::text()"
+                        ]
+                    }
+                ]
+            },
+            "amenities": {
+                "_fns": [
+                    {
+                        "_fn": "xpath",
+                        "_args": [
+                            "//div[@data-section-id='AMENITIES_DEFAULT']"
+                        ]
+                    }
+                ],
+                "_items": {
+                    "_fns": [
+                        {
+                            "_fn": "xpath",
+                            "_args": [
+                                ".//div[@class='_19xnuo97']/div/div/text()"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "address": {
+                "_fns": [
+                    {
+                        "_fn": "xpath_one",
+                        "_args": [
+                            "//div[@class='_leqb4t']/h3/text()"
+                        ]
+                    }
+                ]
+            }
+        },
+        "host": {
+            "name": {
+                "_fns": [
+                    {
+                        "_fn": "xpath_one",
+                        "_args": [
+                            "//div[@data-section-id='HOST_PROFILE_DEFAULT']//h2/text()"
+                        ]
+                    }
+                ]
+            },
+            "verified_status": {
+                "_fns": [
+                    {
+                        "_fn": "xpath_one",
+                        "_args": [
+                            "//div[@data-section-id='HOST_PROFILE_DEFAULT']//li[2]//span[@class='l1dfad8f atm_gz_ftgil2 dir dir-ltr']/text()"
+                        ]
+                    }
+                ]
+            },
+            "profile_url": {
+                "_fns": [
+                    {
+                        "_fn": "xpath_one",
+                        "_args": [
+                            "//div[@data-section-id='HOST_PROFILE_DEFAULT']//a[@target='_blank']/@href"
+                        ]
+                    }
+                ]
+            }
+        },
+        "ratings": {
+            "overall_rating": {
+                "_fns": [
+                    {
+                        "_fn": "xpath_one",
+                        "_args": [
+                            "//*[contains(text(), 'Rated')]/following::div[1]/text()"
+                        ]
+                    }
+                ]
+            },
+            "reviews": {
+                "_fns": [
+                    {
+                        "_fn": "xpath",
+                        "_args": [
+                            "//div[@data-section-id='REVIEWS_DEFAULT']//div[@role='listitem']"
+                        ]
+                    }
+                ],
+                "_items": {
+                    "rating": {
+                        "_fns": [
+                            {
+                                "_fn": "xpath_one",
+                                "_args": [
+                                    ".//div[@class='c5dn5hn atm_9s_1txwivl atm_cx_t94yts dir dir-ltr']/span/text()"
+                                ]
+                            },
+                            {
+                                "_fn": "amount_from_string"
+                            }
+                        ]
+                    },
+                    "date": {
+                        "_fns": [
+                            {
+                                "_fn": "xpath_one",
+                                "_args": [
+                                    ".//div[@class='s78n3tv atm_c8_1w0928g atm_g3_1dd5bz5 atm_cs_qo5vgd atm_9s_1txwivl atm_h_1h6ojuz dir dir-ltr']/text()"
+                                ]
+                            }
+                        ]
+                    },
+                    "review": {
+                        "_fns": [
+                            {
+                                "_fn": "xpath_one",
+                                "_args": [
+                                    ".//span[@class='lrl13de atm_kd_pg2kvz_1bqn0at dir dir-ltr']/text()"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "images": {
+            "_fns": [
+                {
+                    "_fn": "xpath",
+                    "_args": [
+                        "//picture//*[@data-original-uri]/@data-original-uri"
+                    ]
+                }
+            ]
+        }
+    }
+}

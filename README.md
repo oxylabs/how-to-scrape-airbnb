@@ -255,6 +255,9 @@ with open("listing_payload.json", "r") as f:
     payload = json.load(f)
 ```
 
+If you want to scrape more data points from Airbnb listing pages, you can find a [payload file](code%20files/listing_payload_more_data.json) that achieves this in the `code files` folder.
+
+
 ## 7. Create coroutines to process API jobs asynchronously
 
 ### Submit a job
@@ -468,7 +471,6 @@ Below you can see the JSON output of one of the scraped and parsed Airbnb listin
     }
 ]
 ```
-
 
 ## Scrape Airbnb search page
 

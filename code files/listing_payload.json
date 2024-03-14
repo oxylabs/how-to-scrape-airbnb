@@ -1,0 +1,143 @@
+{
+    "source": "universal",
+    "url": null,
+    "geo_location": "United States",
+    "user_agent_type": "desktop",
+    "render": "html",
+    "browser_instructons": [
+        {
+            "type": "wait_for_element",
+            "selector": {
+                "type": "xpath",
+                "value": "//div[@data-section-id='HOST_PROFILE_DEFAULT']"
+            },
+            "timeout_s": 30
+        }
+    ],
+    "parse": true,
+    "parsing_instructions": {
+        "titles": {
+            "title_one": {
+                "_fns": [
+                    {
+                        "_fn": "xpath_one",
+                        "_args": [
+                            "//span/h1/text()"
+                        ]
+                    }
+                ]
+            },
+            "title_two": {
+                "_fns": [
+                    {
+                        "_fn": "xpath_one",
+                        "_args": [
+                            "//div/h1/text()"
+                        ]
+                    }
+                ]
+            }
+        },
+        "pricing": {
+            "price_per_night": {
+                "_fns": [
+                    {
+                        "_fn": "xpath_one",
+                        "_args": [
+                            "//span[@class='_tyxjp1']/text()",
+                            "//span[@class='_1y74zjx']"
+                        ]
+                    },
+                    {
+                        "_fn": "element_text"
+                    }
+                ]
+            },
+            "price_total": {
+                "_fns": [
+                    {
+                        "_fn": "xpath_one",
+                        "_args": [
+                            "//span/span[@class='_j1kt73']/text()"
+                        ]
+                    }
+                ]
+            }
+        },
+        "host_url": {
+            "_fns": [
+                {
+                    "_fn": "xpath_one",
+                    "_args": [
+                        "//div[@data-section-id='HOST_PROFILE_DEFAULT']//a[@target='_blank']/@href"
+                    ]
+                }
+            ]
+        },
+        "overall_rating": {
+            "_fns": [
+                {
+                    "_fn": "xpath_one",
+                    "_args": [
+                        "//*[contains(text(), 'Rated')]/following::div[1]/text()"
+                    ]
+                }
+            ]
+        },
+        "reviews": {
+            "_fns": [
+                {
+                    "_fn": "xpath",
+                    "_args": [
+                        "//div[@data-section-id='REVIEWS_DEFAULT']//div[@role='listitem']"
+                    ]
+                }
+            ],
+            "_items": {
+                "rating": {
+                    "_fns": [
+                        {
+                            "_fn": "xpath_one",
+                            "_args": [
+                                ".//div[@class='c5dn5hn atm_9s_1txwivl atm_cx_t94yts dir dir-ltr']/span/text()"
+                            ]
+                        },
+                        {
+                            "_fn": "amount_from_string"
+                        }
+                    ]
+                },
+                "date": {
+                    "_fns": [
+                        {
+                            "_fn": "xpath_one",
+                            "_args": [
+                                ".//div[@class='s78n3tv atm_c8_1w0928g atm_g3_1dd5bz5 atm_cs_qo5vgd atm_9s_1txwivl atm_h_1h6ojuz dir dir-ltr']/text()"
+                            ]
+                        }
+                    ]
+                },
+                "review": {
+                    "_fns": [
+                        {
+                            "_fn": "xpath_one",
+                            "_args": [
+                                ".//span[@class='lrl13de atm_kd_pg2kvz_1bqn0at dir dir-ltr']/text()"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "images": {
+            "_fns": [
+                {
+                    "_fn": "xpath",
+                    "_args": [
+                        "//picture//*[@data-original-uri]/@data-original-uri"
+                    ]
+                }
+            ]
+        }
+    }
+}

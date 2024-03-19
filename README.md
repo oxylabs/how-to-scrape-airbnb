@@ -270,7 +270,7 @@ Oxylabs’ APIs support [batch processing](https://developers.oxylabs.io/scraper
 
 ```python
 async def submit_job(payload):
-    async with aiohttp.ClientSession(auth=BasicAuth(USERNAME, PASSWORD), connector=aiohttp.TCPConnector(ssl=False)) as session:
+    async with aiohttp.ClientSession(auth=BasicAuth(USERNAME, PASSWORD)) as session:
         async with session.post("https://data.oxylabs.io/v1/queries/batch", json=payload) as response:
             try:
                 r = await response.json()
@@ -366,7 +366,7 @@ with open("listing_payload.json", "r") as f:
     payload = json.load(f)
 
 async def submit_job(payload):
-    async with aiohttp.ClientSession(auth=BasicAuth(USERNAME, PASSWORD), connector=aiohttp.TCPConnector(ssl=False)) as session:
+    async with aiohttp.ClientSession(auth=BasicAuth(USERNAME, PASSWORD)) as session:
         async with session.post("https://data.oxylabs.io/v1/queries/batch", json=payload) as response:
             try:
                 r = await response.json()

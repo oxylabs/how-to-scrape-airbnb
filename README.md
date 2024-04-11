@@ -161,7 +161,7 @@ payload = {
                 "_fns": [
                     {
                         "_fn": "xpath_one",
-                        "_args": ["//div/h1/text()"]
+                        "_args": ["//div[contains(@data-section-id, 'OVERVIEW')]//h2/text()"]
                     }
                 ]
             }
@@ -171,9 +171,8 @@ payload = {
                 "_fns": [
                     {
                         "_fn": "xpath_one",
-                        "_args": ["//span[@class='_tyxjp1']/text()", "//span[@class='_1y74zjx']"]
-                    },
-                    {"_fn": "element_text"}
+                        "_args": ["//span[@class='_tyxjp1']/text()", "//span[@class='_1y74zjx']/text()"]
+                    }
                 ]
             },
             "price_total": {
@@ -189,7 +188,7 @@ payload = {
             "_fns": [
                 {
                     "_fn": "xpath_one",
-                    "_args": ["//div[@data-section-id='HOST_PROFILE_DEFAULT']//a[@target='_blank']/@href"]
+                    "_args": ["//div[contains(@data-section-id, 'HOST')]//a/@href"]
                 }
             ]
         },
@@ -205,7 +204,7 @@ payload = {
             "_fns": [
                 {
                     "_fn": "xpath",
-                    "_args": ["//div[@data-section-id='REVIEWS_DEFAULT']//div[@role='listitem']"]
+                    "_args": ["//div[contains(@data-section-id, 'REVIEWS')]//div[@role='listitem']"]
                 }
             ],
             "_items": {
@@ -213,7 +212,7 @@ payload = {
                     "_fns": [
                         {
                             "_fn": "xpath_one",
-                            "_args": [".//div[@class='c5dn5hn atm_9s_1txwivl atm_cx_t94yts dir dir-ltr']/span/text()"]
+                            "_args": [".//div[contains(@class, 'c5dn5hn')]/span/text()"]
                         },
                         {"_fn": "amount_from_string"}
                     ]
@@ -222,7 +221,7 @@ payload = {
                     "_fns": [
                         {
                             "_fn": "xpath_one",
-                            "_args": [".//div[@class='s78n3tv atm_c8_1w0928g atm_g3_1dd5bz5 atm_cs_qo5vgd atm_9s_1txwivl atm_h_1h6ojuz dir dir-ltr']/text()"]
+                            "_args": [".//div[contains(@class, 's78n3tv')]/text()"]
                         }
                     ]
                 },
@@ -230,7 +229,7 @@ payload = {
                     "_fns": [
                         {
                             "_fn": "xpath_one",
-                            "_args": [".//span[@class='lrl13de atm_kd_pg2kvz_1bqn0at dir dir-ltr']/text()"]
+                            "_args": [".//span[contains(@class, 'lrl13de')]/text()"]
                         }
                     ]
                 }

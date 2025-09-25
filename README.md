@@ -54,7 +54,7 @@ from pprint import pprint
 
 payload = {
     "source": "universal",
-    "url": "https://www.airbnb.com/rooms/639705836870039306?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&photo_id=1437197361&search_mode=flex_destinations_search&check_in=2024-06-28&check_out=2024-07-03&source_impression_id=p3_1708944446_F%2FuHvpf5A7Gvt8Pi&previous_page_section_name=1000",
+    "url": "https://www.airbnb.com/rooms/639705836870039306?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&photo_id=1437197361&search_mode=flex_destinations_search&check_in=2025-06-28&check_out=2025-07-03&source_impression_id=p3_1708944446_F%2FuHvpf5A7Gvt8Pi&previous_page_section_name=1000",
     "geo_location": "United States",
     "render": "html"
 }
@@ -85,9 +85,9 @@ from aiohttp import BasicAuth
 USERNAME, PASSWORD = "USERNAME", "PASSWORD"
 
 urls = [
-   "https://www.airbnb.com/rooms/639705836870039306?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&photo_id=1437197361&search_mode=flex_destinations_search&check_in=2024-06-28&check_out=2024-07-03&source_impression_id=p3_1708944446_F%2FuHvpf5A7Gvt8Pi&previous_page_section_name=1000",
-   "https://www.airbnb.com/rooms/685374557739707093?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&photo_id=1514770868&search_mode=flex_destinations_search&check_in=2024-03-17&check_out=2024-03-22&source_impression_id=p3_1708944446_iBXKC59AR9NTQc4y&previous_page_section_name=1000",
-   "https://www.airbnb.com/rooms/51241506?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&photo_id=1264515417&search_mode=flex_destinations_search&check_in=2024-04-07&check_out=2024-04-12&source_impression_id=p3_1708944446_zo%2FqBnbRPhn7zqAr&previous_page_section_name=1000",
+   "https://www.airbnb.com/rooms/639705836870039306?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&photo_id=1437197361&search_mode=flex_destinations_search&check_in=2025-06-28&check_out=2025-07-03&source_impression_id=p3_1708944446_F%2FuHvpf5A7Gvt8Pi&previous_page_section_name=1000",
+   "https://www.airbnb.com/rooms/685374557739707093?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&photo_id=1514770868&search_mode=flex_destinations_search&check_in=2025-03-17&check_out=2025-03-22&source_impression_id=p3_1708944446_iBXKC59AR9NTQc4y&previous_page_section_name=1000",
+   "https://www.airbnb.com/rooms/51241506?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&photo_id=1264515417&search_mode=flex_destinations_search&check_in=2025-04-07&check_out=2025-04-12&source_impression_id=p3_1708944446_zo%2FqBnbRPhn7zqAr&previous_page_section_name=1000",
 ]
 ```
 
@@ -355,9 +355,9 @@ from aiohttp import BasicAuth
 USERNAME, PASSWORD = "username", "password" # Replace with your API credentials
 
 urls = [
-   "https://www.airbnb.com/rooms/639705836870039306?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&photo_id=1437197361&search_mode=flex_destinations_search&check_in=2024-06-28&check_out=2024-07-03&source_impression_id=p3_1708944446_F%2FuHvpf5A7Gvt8Pi&previous_page_section_name=1000",
-   "https://www.airbnb.com/rooms/685374557739707093?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&photo_id=1514770868&search_mode=flex_destinations_search&check_in=2024-03-17&check_out=2024-03-22&source_impression_id=p3_1708944446_iBXKC59AR9NTQc4y&previous_page_section_name=1000",
-   "https://www.airbnb.com/rooms/51241506?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&photo_id=1264515417&search_mode=flex_destinations_search&check_in=2024-04-07&check_out=2024-04-12&source_impression_id=p3_1708944446_zo%2FqBnbRPhn7zqAr&previous_page_section_name=1000",
+   "https://www.airbnb.com/rooms/639705836870039306?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&photo_id=1437197361&search_mode=flex_destinations_search&check_in=2025-06-28&check_out=2025-07-03&source_impression_id=p3_1708944446_F%2FuHvpf5A7Gvt8Pi&previous_page_section_name=1000",
+   "https://www.airbnb.com/rooms/685374557739707093?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&photo_id=1514770868&search_mode=flex_destinations_search&check_in=2025-03-17&check_out=2025-03-22&source_impression_id=p3_1708944446_iBXKC59AR9NTQc4y&previous_page_section_name=1000",
+   "https://www.airbnb.com/rooms/51241506?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&photo_id=1264515417&search_mode=flex_destinations_search&check_in=2025-04-07&check_out=2025-04-12&source_impression_id=p3_1708944446_zo%2FqBnbRPhn7zqAr&previous_page_section_name=1000",
 ]
 
 payload = {}
@@ -470,7 +470,7 @@ Below you can see the JSON output of one of the scraped and parsed Airbnb listin
         "host_url": "/users/show/461252637",
         "overall_rating": "4.84",
         "parse_status_code": 12000,
-        "listing_url": "https://www.airbnb.com/rooms/639705836870039306?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&photo_id=1437197361&search_mode=flex_destinations_search&check_in=2024-06-28&check_out=2024-07-03&source_impression_id=p3_1708944446_F%2FuHvpf5A7Gvt8Pi&previous_page_section_name=1000"
+        "listing_url": "https://www.airbnb.com/rooms/639705836870039306?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&photo_id=1437197361&search_mode=flex_destinations_search&check_in=2025-06-28&check_out=2025-07-03&source_impression_id=p3_1708944446_F%2FuHvpf5A7Gvt8Pi&previous_page_section_name=1000"
     }
 ]
 ```

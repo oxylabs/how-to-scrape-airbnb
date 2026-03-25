@@ -44,7 +44,7 @@ The [asyncio](https://docs.python.org/3/library/asyncio.html) and [aiohttp](http
 
 Head to the [Oxylabs dashboard](https://dashboard.oxylabs.io/en/?_gl=1*1u40pf6*_gcl_au*MTQ0Mzk1NzUwNy4xNzA4OTM5Mzk5LjcxNjg3MzQ0My4xNzA5NzM2ODIxLjE3MDk3MzY4MjE.) and claim your **7-day free trial** for [Web Scraper API](https://oxylabs.io/products/scraper-api/web) which includes Airbnb Scraper API. See the steps here on how to get your free trial when logged in to the dashboard.
 
-Web Scraper API comes with a [worldwide proxy pool](https://developers.oxylabs.io/scraper-apis/web-scraper-api/all-domains?_gl=1*1u40pf6*_gcl_au*MTQ0Mzk1NzUwNy4xNzA4OTM5Mzk5LjcxNjg3MzQ0My4xNzA5NzM2ODIxLjE3MDk3MzY4MjE.#geo_location), a [Headless Browser](https://oxylabs.io/features/headless-browser), a [Custom Parser](https://oxylabs.io/features/custom-parser), [batch queries](https://developers.oxylabs.io/scraper-apis/getting-started/integration-methods/push-pull?_gl=1*2vw07*_gcl_au*MTQ0Mzk1NzUwNy4xNzA4OTM5Mzk5LjcxNjg3MzQ0My4xNzA5NzM2ODIxLjE3MDk3MzY4MjE.#batch-query), and other smart features for block-free web scraping. As a result, you won’t need any additional Python libraries like Beautiful Soup, Selenium, or Puppeteer since dynamic page rendering, human-like requests, and data parsing will be done via Web Scraper API.
+Web Scraper API comes with a [worldwide proxy pool](https://developers.oxylabs.io/scraper-apis/web-scraper-api/all-domains?_gl=1*1u40pf6*_gcl_au*MTQ0Mzk1NzUwNy4xNzA4OTM5Mzk5LjcxNjg3MzQ0My4xNzA5NzM2ODIxLjE3MDk3MzY4MjE.#geo_location), [Custom Browser Instructions](https://oxylabs.io/features/custom-browser-instructions), a [Custom Parser](https://oxylabs.io/features/custom-parser), [batch queries](https://developers.oxylabs.io/scraper-apis/getting-started/integration-methods/push-pull?_gl=1*2vw07*_gcl_au*MTQ0Mzk1NzUwNy4xNzA4OTM5Mzk5LjcxNjg3MzQ0My4xNzA5NzM2ODIxLjE3MDk3MzY4MjE.#batch-query), and other smart features for block-free web scraping. As a result, you won’t need any additional Python libraries like Beautiful Soup, Selenium, or Puppeteer since dynamic page rendering, human-like requests, and data parsing will be done via Web Scraper API.
 
 ### Send a test request
 
@@ -100,7 +100,7 @@ payload = {
     "geo_location": "United States",
     "user_agent_type": "desktop",
     "render": "html",
-    "browser_instructons": [],
+    "browser_instructions": [],
     "parse": True,
     "parsing_instructions": {}
 }
@@ -108,7 +108,7 @@ payload = {
 Note that the `url` parameter is set to `None` since the Python scraper you’ll build will assign the target URLs dynamically. Moreover, if you want to make sure that elements load before the scraper initiates, you can use [browser instructions](https://developers.oxylabs.io/scraper-apis/headless-browser/browser-instructions-beta?_gl=1*k5omra*_gcl_au*MTQ0Mzk1NzUwNy4xNzA4OTM5Mzk5LjcxNjg3MzQ0My4xNzA5NzM2ODIxLjE3MDk3MzY4MjE.) to `wait_for_element`:
 
 ```python
-    "browser_instructons": [
+    "browser_instructions": [
         {
             "type": "wait_for_element",
             "selector": {
@@ -136,7 +136,7 @@ payload = {
     "geo_location": "United States",
     "user_agent_type": "desktop",
     "render": "html",
-    "browser_instructons": [
+    "browser_instructions": [
         {
             "type": "wait_for_element",
             "selector": {
@@ -479,7 +479,7 @@ Below you can see the JSON output of one of the scraped and parsed Airbnb listin
 
 ### 1. Build the Airbnb search results scraper
 
-By default, the Airbnb website loads the first 20 listings on the search page. If you want to load more listings, you must scroll the page, which we'll show how to do later. To scrape an Airbnb search page, you need to instruct the Headless Browser to wait until the 20th listing loads, and then collect the URLs of those 20 Airbnb listings:
+By default, the Airbnb website loads the first 20 listings on the search page. If you want to load more listings, you must scroll the page, which we'll show how to do later. To scrape an Airbnb search page, you need to use Custom Browser Instructions to wait until the 20th listing loads, and then collect the URLs of those 20 Airbnb listings:
 
 ```python
 ### scrape_20_urls.py
@@ -492,7 +492,7 @@ payload = {
     "url": "https://www.airbnb.com/",
     "geo_location": "United States",
     "render": "html",
-    "browser_instructons": [
+    "browser_instructions": [
         {
             "type": "wait_for_element",
             "selector": {

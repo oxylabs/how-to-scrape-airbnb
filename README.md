@@ -44,7 +44,7 @@ The [asyncio](https://docs.python.org/3/library/asyncio.html) and [aiohttp](http
 
 Head to the [Oxylabs dashboard](https://dashboard.oxylabs.io/en/?_gl=1*1u40pf6*_gcl_au*MTQ0Mzk1NzUwNy4xNzA4OTM5Mzk5LjcxNjg3MzQ0My4xNzA5NzM2ODIxLjE3MDk3MzY4MjE.) and claim your **7-day free trial** for [Web Scraper API](https://oxylabs.io/products/scraper-api/web) which includes Airbnb Scraper API. See the steps here on how to get your free trial when logged in to the dashboard.
 
-Web Scraper API comes with a [worldwide proxy pool](https://developers.oxylabs.io/scraper-apis/web-scraper-api/all-domains?_gl=1*1u40pf6*_gcl_au*MTQ0Mzk1NzUwNy4xNzA4OTM5Mzk5LjcxNjg3MzQ0My4xNzA5NzM2ODIxLjE3MDk3MzY4MjE.#geo_location), [Custom Browser Instructions](https://oxylabs.io/features/custom-browser-instructions), a [Custom Parser](https://oxylabs.io/features/custom-parser), [batch queries](https://developers.oxylabs.io/scraper-apis/getting-started/integration-methods/push-pull?_gl=1*2vw07*_gcl_au*MTQ0Mzk1NzUwNy4xNzA4OTM5Mzk5LjcxNjg3MzQ0My4xNzA5NzM2ODIxLjE3MDk3MzY4MjE.#batch-query), and other smart features for block-free web scraping. As a result, you won’t need any additional Python libraries like Beautiful Soup, Selenium, or Puppeteer since dynamic page rendering, human-like requests, and data parsing will be done via Web Scraper API.
+Web Scraper API comes with a [worldwide proxy pool](https://developers.oxylabs.io/api-targets), [Custom Browser Instructions](https://oxylabs.io/features/custom-browser-instructions), a [Custom Parser](https://oxylabs.io/features/custom-parser), [batch queries](https://developers.oxylabs.io/products/web-scraper-api/integration-methods/push-pull), and other smart features for block-free web scraping. As a result, you won’t need any additional Python libraries like Beautiful Soup, Selenium, or Puppeteer since dynamic page rendering, human-like requests, and data parsing will be done via Web Scraper API.
 
 ### Send a test request
 
@@ -105,7 +105,7 @@ payload = {
     "parsing_instructions": {}
 }
 ```
-Note that the `url` parameter is set to `None` since the Python scraper you’ll build will assign the target URLs dynamically. Moreover, if you want to make sure that elements load before the scraper initiates, you can use [browser instructions](https://developers.oxylabs.io/scraper-apis/headless-browser/browser-instructions-beta?_gl=1*k5omra*_gcl_au*MTQ0Mzk1NzUwNy4xNzA4OTM5Mzk5LjcxNjg3MzQ0My4xNzA5NzM2ODIxLjE3MDk3MzY4MjE.) to `wait_for_element`:
+Note that the `url` parameter is set to `None` since the Python scraper you’ll build will assign the target URLs dynamically. Moreover, if you want to make sure that elements load before the scraper initiates, you can use [browser instructions](https://developers.oxylabs.io/products/web-scraper-api/features/js-rendering-and-browser-control#browser-instructions) to `wait_for_element`:
 
 ```python
     "browser_instructions": [
@@ -120,7 +120,7 @@ Note that the `url` parameter is set to `None` since the Python scraper you’ll
     ],
 ```
 
-See the [documentation](https://developers.oxylabs.io/scraper-apis/web-scraper-api?_gl=1*k5omra*_gcl_au*MTQ0Mzk1NzUwNy4xNzA4OTM5Mzk5LjcxNjg3MzQ0My4xNzA5NzM2ODIxLjE3MDk3MzY4MjE.) to learn more about the available Web Scraper API parameters and their purpose.
+See the [documentation](https://developers.oxylabs.io/products/web-scraper-api) to learn more about the available Web Scraper API parameters and their purpose.
 
 ## 6. Create parsing instructions
 
@@ -265,7 +265,7 @@ If you want to scrape more data points from Airbnb listing pages, you can find a
 
 ### Submit a job
 
-Oxylabs’ APIs support [batch processing](https://developers.oxylabs.io/scraper-apis/getting-started/integration-methods/push-pull?_gl=1*152wuc5*_gcl_au*MTQ0Mzk1NzUwNy4xNzA4OTM5Mzk5LjcxNjg3MzQ0My4xNzA5NzM2ODIxLjE3MDk3MzY4MjE.#batch-query) of `query` or `url` parameter values. Therefore, you can send a single request to process up to 1000 Airbnb URLs with the same scraping and parsing instructions. So, let’s define an asynchronous coroutine which will return job IDs for each submitted Airbnb URL:
+Oxylabs’ APIs support [batch processing](https://developers.oxylabs.io/products/web-scraper-api/integration-methods/push-pull) of `query` or `url` parameter values. Therefore, you can send a single request to process up to 1000 Airbnb URLs with the same scraping and parsing instructions. So, let’s define an asynchronous coroutine which will return job IDs for each submitted Airbnb URL:
 
 ```python
 async def submit_job(payload):
@@ -281,7 +281,7 @@ async def submit_job(payload):
 ```
 
 > [!IMPORTANT]
-> Make sure not to exceed the free trial’s _rate limit_. Use up to `10` URLs; otherwise, the API will return the “Too many requests” [response code](https://developers.oxylabs.io/scraper-apis/getting-started/response-codes?_gl=1*5sfdi3*_gcl_au*MTQ0Mzk1NzUwNy4xNzA4OTM5Mzk5LjcxNjg3MzQ0My4xNzA5NzM2ODIxLjE3MDk3MzY4MjE.). The try-except block will print this error in your terminal. If you want to bypass this rate limit, head to the [pricing page](https://oxylabs.io/products/scraper-api/web/pricing) and pick a plan that suits you.
+> Make sure not to exceed the free trial’s _rate limit_. Use up to `10` URLs; otherwise, the API will return the “Too many requests” [response code](https://developers.oxylabs.io/products/web-scraper-api/response-codes). The try-except block will print this error in your terminal. If you want to bypass this rate limit, head to the [pricing page](https://oxylabs.io/products/scraper-api/web/pricing) and pick a plan that suits you.
 
 ### Check job status
 

@@ -1,10 +1,14 @@
 # How to Scrape Airbnb Listing Data With Python
 
+[![Oxylabs promo code](https://github.com/oxylabs/how-to-scrape-airbnb/blob/main/12-how-to-scrape-airbnb.png)](https://oxylabs.io/pages/gitoxy?utm_source=877&utm_medium=affiliate&groupid=877&utm_content=how-to-scrape-airbnb-github&transaction_id=102f49063ab94276ae8f116d224b67)
 
-
-[![Oxylabs promo code](https://raw.githubusercontent.com/oxylabs/product-integrations/refs/heads/master/Affiliate-Universal-1090x275.png)](https://oxylabs.io/pages/gitoxy?utm_source=877&utm_medium=affiliate&groupid=877&utm_content=how-to-scrape-airbnb-github&transaction_id=102f49063ab94276ae8f116d224b67)
-
-[![](https://dcbadge.vercel.app/api/server/eWsVUJrnG5)](https://discord.gg/eWsVUJrnG5)
+<p align="left">
+  <a href="https://dashboard.oxylabs.io"><img src="https://img.shields.io/badge/%F0%9F%9A%80_Get_Started-FF6B35?style=for-the-badge" alt="Get started"></a>
+  <a href="https://developers.oxylabs.io/products/web-api"><img src="https://img.shields.io/badge/%F0%9F%93%9A_Documentation-4A90E2?style=for-the-badge" alt="Documentation"></a>
+  <a href="https://dashboard.oxylabs.io"><img src="https://img.shields.io/badge/%F0%9F%93%8A_Dashboard-2EA44F?style=for-the-badge" alt="Dashboard"></a>
+  <a href="https://discord.gg/Pds3gBmKMH"><img src="https://img.shields.io/badge/%F0%9F%92%AC_Discord-5865F2?style=for-the-badge" alt="Discord"></a>
+  <a href="https://www.youtube.com/@oxylabs"><img src="https://img.shields.io/badge/%E2%96%B6%EF%B8%8F_YouTube-FF0000?style=for-the-badge" alt="YouTube"></a>
+</p>
 
 See this in-depth article to learn how to easily scrape Airbnb listings with Python while using Oxylabs’ [Airbnb Scraper API](https://oxylabs.io/products/scraper-api/web/airbnb) to bypass blocks and interruptions. 
 
